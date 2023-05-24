@@ -12,6 +12,19 @@ ENV MYSQL_ROOT_PASSWORD=C0ntrol1*
 
 EXPOSE 3306
 
+# ------------------------------ POSTGRES ----------------------------------------
+FROM postgres:latest AS Postgres
 
+ENV POSTGRES_PASSWORD=C0ntrol1*
+
+EXPOSE 5432
+
+# ------------------------------ ORACLE ------------------------------------------
+
+FROM gvenzl/oracle-xe:21 AS Oracle
+
+ENV ORACLE_PASSWORD=C0ntrol1*
+
+EXPOSE 1521
 
 

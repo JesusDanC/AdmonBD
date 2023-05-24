@@ -23,6 +23,26 @@ services:
       - ./file_db/Mysql/:/var/lib/mysql
     restart: always
 
+  postgres:
+    container_name: Postgres
+    build:
+      context: .
+      target: Postgres
+      ports:
+      - 20002:5432
+      volumes:
+      - ./file_db/Postgres:/var/lib/postgresql/data
+      restart: always
 
+  oracle:
+    container_name: Oracle
+    build:
+      context: .
+      target: Oracle
+      ports:
+      - 20003:1521
+      volumes:
+      - ./file_db/Oracle:/u01/app/oracle/oradata
+    restart: always
 
 
